@@ -3,5 +3,9 @@ providers = ["python"]
 [phases.setup]
 aptPkgs = ["...", "libpq-dev", "python3-dev", "build-essential"]  
 
+[phases.install]
+cmds = ["mkdir /home/api_python"]
+dependsOn = ["...", "setup"]
+
 [start]
 cmd = "python3 app.py"
